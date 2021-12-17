@@ -1,25 +1,30 @@
 <?php
 
+use App\Http\Controllers\BankIndex;
+use App\Http\Controllers\CreditcardController;
+use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// index
 Route::get('/', function () {
     return view('welcome');
 });
+// production
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    Artisan::call('db:seed');
+    echo "si migro";
+});
+// dashboard card
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CreditcardController::class,'index'])->name('dashboard');
+// index to card selected
+Route::get('banco/{card}', [BankIndex::class,'bank'])->name('banco.inicio');
+// error 404
+Route::fallback(function(){
+    return view('error.404');
+});
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 
 // jetstream routes

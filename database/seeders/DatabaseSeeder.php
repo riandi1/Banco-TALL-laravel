@@ -14,11 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        
+        // usuario prueba
         User::create([
             'name' => 'Usuario de prueba',
             'email' => 'usuario@gmail.com',
             'password' => bcrypt('contra123')
         ]);
+        // card de prueba
+        $this->call(CardSeeder::class);
     }
 }

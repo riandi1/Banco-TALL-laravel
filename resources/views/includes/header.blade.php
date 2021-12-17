@@ -8,7 +8,7 @@
                         En esta identidad Podras Ver tu saldo, Hacer transacciones a otros usuarios de la plataforma,Historial de transacciones, entre otras funcionalidades.
                     </p>
                     <ul class="flex flex-wrap justify-center">
-                        <li><a class="mx-3 main-btn gradient-btn" href="{{route('login')}}" >INICIA SESION</a></li>
+                        <li><a class="mx-3 main-btn gradient-btn" href="{{route('login')}}" >@auth DASHBOARD @else INICIA SESION @endauth</a></li>
                     </ul>
                 </div> <!-- header content -->
             </div>
