@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class BankIndex extends Controller
 {
-    public function bank()
+    public function bank($id)
     {
-        return view('bank.inicio');
+        return view('bank.inicio',compact('id'));
     }
+    public function transaccion()
+    {
+        return view('bank.transaccion');
+    }
+    
 }

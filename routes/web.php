@@ -20,6 +20,7 @@ Route::get('/migrate', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CreditcardController::class,'index'])->name('dashboard');
 // index to card selected
 Route::get('banco/{card}', [BankIndex::class,'bank'])->name('banco.inicio');
+Route::get('banco/{card}/transaccion', [BankIndex::class,'transaccion'])->name('banco.transaccion');
 // error 404
 Route::fallback(function(){
     return view('error.404');
