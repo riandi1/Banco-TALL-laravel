@@ -165,7 +165,7 @@
         }
 
     </style>
-
+    <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
@@ -184,9 +184,13 @@
         </main>
     </div>
 
+    
     @stack('modals')
+    
 
     @livewireScripts
+    @stack('js')
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
 </body>
 
 </html>

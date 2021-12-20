@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankIndex;
 use App\Http\Controllers\CreditcardController;
+use App\Http\Controllers\historyTransaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CreditcardCo
 // index to card selected
 Route::get('banco/{card}', [BankIndex::class,'bank'])->name('banco.inicio');
 Route::get('banco/{card}/transaccion', [BankIndex::class,'transaccion'])->name('banco.transaccion');
+Route::get('history/{card}', [historyTransaction::class,'index'])->name('banco.history');
 // error 404
 Route::fallback(function(){
     return view('error.404');

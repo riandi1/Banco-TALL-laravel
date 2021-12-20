@@ -9,6 +9,7 @@ class Transaction extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
     public function creditsent()
     {
         return $this->belongsTo(creditcard::class,'card_sent');

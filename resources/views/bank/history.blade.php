@@ -5,10 +5,13 @@
         </h2>
     </x-slot>
 
-    <div class="py-10">
+    <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <x-button class="mb-4">
+                Volver
+            </x-button>
             <div class="bg-white p-4 overflow-hidden shadow-xl sm:rounded-lg">
-                @livewire('index-bank', ['id2' => $id2])
+                @livewire('history-tra', ['id2' => $id2])
             </div>
         </div>
     </div>
