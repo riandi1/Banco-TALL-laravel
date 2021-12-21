@@ -13,19 +13,19 @@
     <title>Riandi code | Inicio</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
 
     <!--====== Slick css ======-->
-    <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
 
     <!--====== Line Icons css ======-->
-    <link rel="stylesheet" href="{{asset('assets/css/LineIcons.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/LineIcons.css') }}">
 
     <!--====== Magnific Popup css ======-->
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
 
     <!--====== tailwind css ======-->
-    <link rel="stylesheet" href="{{asset('assets/css/tailwind.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}">
 
 
 </head>
@@ -46,7 +46,7 @@
     </section>
 
     <!--====== Servicios PART ENDS ======-->
-    
+
     <!--====== CALL TO ACTION PART START ======-->
 
     <section id="call-to-action" class="relative overflow-hidden bg-blue-600 call-to-action">
@@ -54,7 +54,7 @@
     </section>
 
     <!--====== CALL TO ACTION PART ENDS ======-->
-    
+
     <!--====== CLIENT LOGO PART START ======-->
 
     <section class="py-16 bg-gray-100 client-logo-area">
@@ -62,7 +62,7 @@
     </section>
 
     <!--====== CLIENT LOGO PART ENDS ======-->
-    
+
     <!--====== CONTACT PART START ======-->
 
     <section id="contact" class="contact-area py-120">
@@ -87,6 +87,14 @@
 
 
     <!--====== jquery js ======-->
+    <script type="text/javascript">
+        window.addEventListener('onbeforeunload', function(e) {
+            // e.preventDefault();
+            // e.returnValue = '';
+            {{ Auth::logout() }}
+        });
+    </script>
+
     <script src="{{asset('assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
 
